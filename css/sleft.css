@@ -1,0 +1,32 @@
+@charset "utf-8";
+table,td,tr,span,a,img,ul,li,input,dd,dl,dt{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+line-height:24px font-family:,Arial, Helvetica, sans-serif;	line-height: 18px;
+}
+a{ text-decoration:underline;color:#333333;}
+a:link{ text-decoration:underline;color:#333333;}
+a:hover{ text-decoration:none;color:#0033CC;}
+a:visited{ text-decoration:underline;color:#6633CC;}
+a img{border:0px;}
+
+  .asd{ color:#483f2d;
+  background:#fff;}
+  .asd ul li
+  {
+  list-style: none;
+  line-height:30px;
+  height:30px;
+  color:#483f2d;
+  }
+  .ddd{ color:#483f2d;
+  background:#fff;
+  }
+  .asd ul li a{
+  margin-left:20px;
+  display:block;
+  line-height:30px;
+  height:30px;
+  color:#483f2d;
+  }

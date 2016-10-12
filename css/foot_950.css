@@ -1,0 +1,44 @@
+@charset "utf-8";
+*{ margin:0; padding:0; list-style:none; }
+.w950{ width:950px; margin:0 auto;}
+.left{ float:left;}
+.right{ float:right;}
+.faH{ overflow:hidden;}
+/**/
+.footBox{ text-align: center; color:#282626; font-family:"微软雅黑"; font-size:12px; border:0 none; }
+.footBox,.footBox a{text-align:left;text-decoration:none; }
+.footBox a:visited{ color:#282626;}
+.footBox .grayF{ background:#f1f0f0; margin-top:16px;}
+.footBox .ltB{ width:496px;text-align: left;}
+.footBox .rtB{ width:422px;text-align: left;}
+.footBox .ltB h1,.footBox .ltB h2,.footBox .rtB h3,.footBox .rtB h4{ font-size:18px; font-weight:normal; line-height:38px; width:144px;}
+.footBox .ltList li a{ line-height:35px; font-size:14px; text-decoration:none;}
+.footBox .ltList li a:hover{ color:#282626;}
+/*.footBox .ltList li a[href]:hover{ text-decoration:underline;}*/
+.footBox .ltList li a[href]:hover{ color:#0033cc;}
+/*.footBox dl.phoneD dt{ background:url(../img/foot/foot_app.png) no-repeat left top; }
+.footBox dl.phoneD dd{ background:url(../img/foot/foot_wechat.png) no-repeat left top;}*/
+.footBox dl.phoneD .pSame{ width:155px; height:70px; margin-top:21px; position:relative;}
+.footBox dl.phoneD .pWord{ font-size:14px; line-height:17px; position:absolute; right:5px; bottom:0px;}
+
+.footBox .bdTop{ border-top:1px solid #282626; margin-top:10px;}
+.footBox .aboutList{ /*padding-left:45px;*/}
+.footBox .aboutList li{ float:left; margin-right:69px; *margin-right:56px !important; height:50px;}
+.footBox .aboutList li.lastNo{ margin-right:0px;}
+.footBox .aboutList li a{ font-size:14px;line-height:50px; text-decoration:none;}
+.footBox .aboutList li a:hover{ color:#0033cc;}
+
+.footBox .blackF{ background:#000; padding:27px 0 23px 0;}
+.footBox .footBlk { text-align:left;}
+.footBox .footBlk li{ float:left;}
+.footBox .blackF a,.footBox .blackF b{ color:white; font-family:"宋体"; line-height:16px;}
+/*.footBox .blackF .backBtn{ display:block; width:150px; height:52px; background:url(../img/foot/back_bg.png) no-repeat left top; position:relative;}*/
+.footBox .blackF .backBtn span{ color:#003366; position:absolute; right:3px; bottom:3px;font-family:"宋体";}
+.footBox .bkLt{ /*padding-left:20px;*/ width:488px;}
+.footBox .bkLt li{ margin-right:23px;}
+.footBox .bkLt .logoF{ display:inline-block; margin-top:14px;}
+.footBox .bkRt{ /*padding-left:21px;*/ width:442px;}
+.footBox .bkRt li{ margin-right:18px;}
+
+.footBox .toTop{ position:fixed; bottom:30px; right:30px; display:block; width:60px; height:60px; cursor:pointer;}
+.footBox .toTop_index{ position:fixed; bottom:30px; right:30px; display:block; width:200px; height:320px; cursor:pointer;}

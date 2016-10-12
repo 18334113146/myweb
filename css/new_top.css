@@ -1,0 +1,143 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+.divtxt a
+{
+    text-align: left;
+    color: #333;
+    font-family: 宋体;
+    font-size: 12px;
+    line-height: 20px;
+}
+.divtxt
+{
+    text-align: left;
+    color: #333;
+    font-family: 宋体;
+    font-size: 12px;
+    line-height: 20px;
+}
+.towcl
+{
+    border: 1px solid #ccc;
+    width: 348px;
+    height: 130px;
+}
+.div-border
+{
+    border-bottom: 1px solid #000;
+    width: 720px;
+    height: 15px;
+    margin-bottom: 15px;
+}
+.biao-name
+{
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: #000;
+    width: 720px;
+    text-indent: 10px;
+    letter-spacing: 2px;
+}
+.biao-bgcolor
+{
+    width: 5px;
+    background: #ccc;
+    height: 20px;
+}
+.pct-f
+{
+    width: 720px;
+    margin-top: 15px;
+}
+.pct-p
+{
+    width: 720px;
+    margin-top: 15px;
+}
+.pct-c
+{
+    width: 115px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+    cursor: pointer;
+}
+.pct-c2 a
+{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 2px;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    font-family:微软雅黑;
+}
+.pct-c2
+{
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.pct-c1
+{
+    width: 115px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    float: left;
+    margin-left: 2px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #fff;
+    background: #168fdc;
+}
+.pct-d
+{
+    width: 720px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.imgs-pct
+{
+    margin-left: 5px;
+    float: left;
+}
+img
+{
+    border: none;
+    outline: none;
+}
+.tdname a
+{
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.tdname1 a
+{
+    color: #333;
+    font-size: 12px;
+    line-height: 20px;
+}
