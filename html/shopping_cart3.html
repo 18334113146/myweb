@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>实现购物车结算</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<script type="text/javascript" src="../js/demo.js"></script>
+	</head>
+
+	<body>
+		<div class="catbox">
+			<table id="cartTable">
+				<thead>
+					<tr>
+						<th><label>
+            <input class="check-all check" type="checkbox"/>&nbsp;&nbsp;全选</label></th>
+						<th>商品</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+						<td class="goods"><img src="../img/shopping_img/860411_R.jpg" alt="" /><span><h4>樱桃果明套装</h4>西印度樱桃精华，塑造鲜嫩透明美肌</span></td>
+						<td class="price">299.88</td>
+						<td class="count"><span class="reduce"></span>
+							<input class="count-input" type="text" value="1" />
+							<span class="add">+</span></td>
+						<td class="subtotal">299.88</td>
+						<td class="operation"><span class="delete">删除</span></td>
+					</tr>
+					<tr>
+						<td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+						<td class="goods"><img src="../img/shopping_img/867177_R.jpg" alt="" /><span><h4>DHC植物滋养化妆水（L）3瓶组</h4>汇聚天然植物精粹，温和补水 宛如肌肤甘露，回归水润素颜美</span></td>
+						<td class="price">688.50</td>
+						<td class="count"><span class="reduce"></span>
+							<input class="count-input" type="text" value="1" />
+							<span class="add">+</span></td>
+						<td class="subtotal">688.50</td>
+						<td class="operation"><span class="delete">删除</span></td>
+					</tr>
+					<tr>
+						<td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+						<td class="goods"><img src="../img/shopping_img/66_R.jpg" alt="" /><span><h4>DHC「黄金」弹力滋润组合</h4>添加高浓度Q10成分，弹走眼纹，紧致Q弹！</span></td>
+						<td class="price">428.50</td>
+						<td class="count"><span class="reduce"></span>
+							<input class="count-input" type="text" value="1" />
+							<span class="add">+</span></td>
+						<td class="subtotal">428.50</td>
+						<td class="operation"><span class="delete">删除</span></td>
+					</tr>
+					<tr>
+						<td class="checkbox"><input class="check-one check" type="checkbox" /></td>
+						<td class="goods"><img src="../img/shopping_img/22308_R.jpg" alt="" /><span><h4>橄榄滋养套装</h4>充分清除毛孔内污垢，并为肌肤提供充盈滋润。</span></td>
+						<td class="price">140.60</td>
+						<td class="count"><span class="reduce"></span>
+							<input class="count-input" type="text" value="1" />
+							<span class="add">+</span></td>
+						<td class="subtotal">140.60</td>
+						<td class="operation"><span class="delete">删除</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="foot" id="foot">
+				<label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;&nbsp;全选</label>
+				<a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
+				<div class="fr closing" onclick="getTotal();">结 算</div>
+				<input type="hidden" id="cartTotalPrice" />
+				<div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+				<div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+				<div class="selected-view">
+					<div id="selectedViewList" class="clearfix">
+						<div><img src="images/1.jpg"><span>取消选择</span></div>
+					</div>
+					<span class="arrow">◆<span> ◆  </span></span>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

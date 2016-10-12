@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DHC首页--实现轮播效果(文字效果建议用IE预览更佳)</title>
+	
+		<link rel="stylesheet" type="text/css" href="../css/smenu.css">
+		
+	    <!--轮播样式文件-->
+		<link type="text/css" rel="stylesheet" href="../css/skitter.css"/>
+
+		<!--引用头部导航栏js插件-->
+		<script src="../js/jsCommon.js"></script>
+	
+		<!--首页主体右边链接全部的样式（重要一）-->
+		<link rel="stylesheet" type="text/css" href="../css/new_top.css"/>
+		<!--首页主体右边链接鼠标经过的全部样式样式（重要二）-->
+		<link rel="stylesheet" type="text/css" href="../css/sleft.css"/>
+		<!--首页主体右边字体全部的样式（重三）-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="../css/foot_950.css"/>
+		<!--页面最低部的样式文件-->
+		
+		<script type="text/javascript" src="../js/sFlash.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
+		
+<!--以下是头部部分开始-->
+
+		<!--以下是菜单栏效果文件，需配合jsCommon文件方能实现效果-->
+		<script type="text/javascript">
+			function MM_nbGroup(event, grpName) {
+				var i, img, nbArr, args = MM_nbGroup.arguments;
+				if(event == "init" && args.length > 2) {
+					if((img = MM_findObj(args[2])) != null && !img.MM_init) {
+						img.MM_init = true;
+						img.MM_up = args[3];
+						img.MM_dn = img.src;
+						if((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+						nbArr[nbArr.length] = img;
+						for(i = 4; i < args.length - 1; i += 2)
+							if((img = MM_findObj(args[i])) != null) {
+								if(!img.MM_up) img.MM_up = img.src;
+								img.src = img.MM_dn = args[i + 1];
+								nbArr[nbArr.length] = img;
+							}
+					}
+				} else if(event == "over") {
+					document.MM_nbOver = nbArr = new Array();
+					for(i = 1; i < args.length - 1; i += 3)
+						if((img = MM_findObj(args[i])) != null) {
+							if(!img.MM_up) img.MM_up = img.src;
+							img.src = (img.MM_dn && args[i + 2]) ? args[i + 2] : ((args[i + 1]) ? args[i + 1] : img.MM_up);
+							nbArr[nbArr.length] = img;
+						}
+				} else if(event == "out") {
+					for(i = 0; i < document.MM_nbOver.length; i++) {
+						img = document.MM_nbOver[i];
+						img.src = (img.MM_dn) ? img.MM_dn : img.MM_up;
+					}
+				} else if(event == "down") {
+					nbArr = document[grpName];
+					if(nbArr)
+						for(i = 0; i < nbArr.length; i++) {
+							img = nbArr[i];
+							img.src = img.MM_up;
+							img.MM_dn = 0;
+						}
+					document[grpName] = nbArr = new Array();
+					for(i = 2; i < args.length - 1; i += 2)
+						if((img = MM_findObj(args[i])) != null) {
+							if(!img.MM_up) img.MM_up = img.src;
+							img.src = img.MM_dn = (args[i + 1]) ? args[i + 1] : img.MM_up;
+							nbArr[nbArr.length] = img;
+						}
+				}
+			}
+		</script>
+
+	</head>
+	
+
+	<body style="margin: 0; padding: 0;">
+		
+  
+
+		<div align="center">
+
+			<div style="background:#fff;">
+				<table border="0" cellpadding="0" cellspacing="0" id="top">
+					<tr>
+						<!--align="left" valign="top"表示左边和垂直边分别对齐-->
+						<td style="width: 555px; height: 100px; line-height:70%" align="left" valign="top">
+							<div style="height: 15px;">
+							</div>
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<a href="#"><img src="../img/home_img/topslogo.png" alt="" /></a>
+									</td>
+									<td style="width: 10px;">
+									</td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops02.png" alt="" /></a>
+									</td>
+									<td valign="top">
+										<a href="#"><img class="img_03" src="../img/home_img/tops03.png" alt="" /></a><br />
+										<a href="#"><img class="img_06" src="../img/home_img/tops06.png" alt="" /></a><br />
+										<a href="#"><img class="img_07" src="../img/home_img/tops07.png" alt="" /></a>
+									</td>
+									<td style="width: 20px;">
+									</td>
+									<td valign="top">
+										<!--在线客服-->
+										<a href="#"><img class="img_04" src="../img/home_img/tops04.png" alt="" /></a>
+										<a href="#"><img class="img_05" src="../img/home_img/tops98.jpg" alt="" /></a><br/>
+										<a href="#"><img class="img_99" src="../img/home_img/tops99.jpg" alt="" /></a>
+									</td>
+								</tr>
+							</table>
+
+							<div style="height: 7px;"></div>
+
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<a href="#"><img src="../img/home_img/tops08.png" alt="" /></a>
+									</td>
+									<td style="width: 15px;"></td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops09.png" alt="" /></a>
+									</td>
+									<td style="width: 15px;"></td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops10.png" alt="" /></a>
+									</td>
+								</tr>
+							</table>
+						</td>
+
+						<td style="width: 395px; background: rgb(240,240,240); position: relative;">
+							<div style=" width: 381px; height: 89px;" align="left">
+								<div style="height: 15px;"></div>
+								<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td align="left" style="width: 187px; background: white;">
+											<table border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td style="width: 75px; height: 20px;color: rgb(157,157,157); position: absolute; font-family: 微软雅黑;">商品合计:</td>
+													<td style="padding-left: 80px;">0</td>
+													<td>件</td>
+												</tr>
+
+												<tr>
+													<td style="width: 75px; height: 20px;color: rgb(157,157,157); position: absolute;padding-left: 24px;font-family: 微软雅黑;">合计:</td>
+										</td>
+										<td style="padding-left: 80px;">0</td>
+										<td style="color:red">元</td>
+										</tr>
+										</table>
+						</td>
+
+						<td style="width: 90px;">
+							<!--//购物车-->
+							<a href="shopping_cart.html" style="width: 90px; height: 48px; display: block;">
+								<img src="../img/home_img/tops01_03.jpg"></img>
+							</a>
+						</td>
+						<td style="width: 8px;"></td>
+						<td style="width: 90px;">
+							<!--登录或注册/-->
+							<a href="register.html" style="width: 90px; height: 48px; display: block;">
+								<img src="../img/home_img/tops01_05.jpg"></img>
+							</a>
+
+						</td>
+						</tr>
+						</table>
+
+						<div style="height: 35px; line-height: 35px; font-size: 14px; font-family: 微软雅黑;
+                                color: #483f2d;" align="center">
+<a href="#" style="font-size: 14px; font-family: 微软雅黑;color: #483f2d; text-decoration: none; position: absolute">欢迎来到DHC[点击登录]</a>
+
+						</div>
+						</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--头部布局结束-->
+
+			<!--以下是实现头部下划线功能-->
+			<script type="text/javascript">
+				$(".img_03").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops03.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops03.png")
+				})
+				$(".img_04").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops04.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops04.png")
+				})
+				$(".img_05").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops98.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops98.jpg")
+				})
+				$(".img_99").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops99.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops99.jpg")
+				})
+				$(".img_06").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops06.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops06.png")
+				})
+				$(".img_07").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops07.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops07.png")
+				})
+			</script>
+			<!--头部布局及样式到此结束-->
+
+			<!--以下是导航栏开始-->
+
+			<div style="width: 100%; background: url(../img/home_img/bg2_1.jpg) repeat; height: 50px;background-position: center top;" align="center">
+				<table width="950" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>
+							<a href="#" target="_top" onMouseOver="MM_nbGroup('over','menu1','../img/home_img/top_2_1up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_1up.jpg" alt="" name="menu1" width="79" height="47" border="0" id="menu1" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu2','../img/home_img/top_2_2up.jpg',1)" onMouseOver="MM_nbGroup('over','menu2','../img/home_img/top_2_2up.jpg','../img/home_img/top_2_2up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_2down.jpg" alt="" name="menu2" width="174" height="47" border="0" id="menu2" onload="" /></a>
+						</td>
+
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu4','../img/home_img/top_2_4up.jpg',1)" onMouseOver="MM_nbGroup('over','menu4','../img/home_img/top_2_4up.jpg','../img/home_img/top_2_4up',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_4down.jpg" alt="" name="menu4" width="174" height="47" border="0" id="menu4" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu5','../img/home_img/top_2_5up.jpg',1)" onMouseOver="MM_nbGroup('over','menu5','../img/home_img/top_2_5up.jpg','../img/home_img/top_2_5up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_5down.jpg" alt="" name="menu5" width="174" height="47" border="0" id="menu5" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu6','../img/home_img/top_2_6up.jpg',1)" onMouseOver="MM_nbGroup('over','menu6','../img/home_img/top_2_6up.jpg','../img/home_img/top_2_6up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_6down.jpg" alt="" name="menu6" width="174" height="47" border="0" id="menu6" onload="" /></a>
+						</td>
+						<td>
+							<a href="lazyloading.html" target="_top" onClick="MM_nbGroup('down','group1','menu9','../img/home_img/top_2_9up.jpg',1)" onMouseOver="MM_nbGroup('over','menu9','../img/home_img/top_2_9up.jpg','../img/home_img/top_2_9up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_9down.jpg" alt="" name="menu9" width="175" height="47" border="0" id="menu9" onload="" /></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div style="width: 100%; background:  url(../img/home_img/bg2_2.jpg) repeat; height: 50px; margin-top:-3;
+            background-position: center top;" align="center">
+				<div style="width: 800px; height: 12px;">
+				</div>
+				<form name=campaignSrh method=post action="#">
+					<div style="height: 25px;" align="center">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td style="width: 10px;">
+								</td>
+								<td style="width: 710px;" align="right">
+									<input type="text" name="searchValue" value="请输入商品名称、商品编号或关键字" maxlength="50" onBlur="searchOnBlur()" onFocus="searchOnFocus()" style="width: 700px; height: 22px; border: 1px solid #333;" />
+								</td>
+								<td style="width: 70px;">
+									<!--搜索-->
+									<a href="#" style="height: 25px; width: 70px; display: block;"><img src="../img/home_img/search.png" style="height: 25px;position: absolute; " /></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<!--以下函数是用来获取搜索框获取焦点或者是失去焦点-->
+		<script type="text/javascript">
+			function searchOnBlur() {
+				var form = document.campaignSrh;
+				if(form.searchValue.value == '') {
+					form.searchValue.value = '请输入商品名称、商品编号或关键字';
+				}
+			}
+
+			function searchOnFocus() {
+				var form = document.campaignSrh;
+				if(form.searchValue.value == '请输入商品名称、商品编号或关键字') {
+					form.searchValue.value = '';
+				}
+			}
+		</script>
+<!--以上是头部部分结束-->
+
+	</body>
+
+</html>
+
+
+
+<html>
+
+	<head>
+		<title>DHC购物车</title>
+		<meta charset="utf-8" />
+
+		<link a href="../css/shopping_sleft.css" rel="stylesheet" type="text/css" />
+		<script src="../js/script.js"></script>
+		<script src="../js/cart.js"></script>
+	</head>
+	<center>
+
+		<body marginheight="0">
+
+			<div style="height:15px;"></div>
+			<form name="moveToForm" method="post" style="margin:0">
+
+				<table width="770" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="50" colspan="2">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="154">
+										<a href='#'><img src="../img/shopping_img/logo.gif" border="0"></a>
+									</td>
+									<td width="615" valign="bottom">
+										<table border="0" cellpadding="0" cellspacing="0" bgcolor="#DEDEDE">
+											<tr>
+												<td bgcolor="#D80000"><span class="step_a">1.我的购物车</span></td>
+												<td width="16"><img src="../img/shopping_img/step_a.gif" width="14" height="24"></td>
+												<td><span class="step">2.填写核对订单信息</span></td>
+												<td width="16"><img src="../img/shopping_img/step.gif" width="14" height="24"></td>
+												<td><span class="step">3.成功提交订单</span></td>
+												<td width="16" bgcolor="#FFFFFF"><img src="../img/shopping_img/step.gif" width="14" height="24"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td height="38" colspan="2">
+							<table width="761" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="153" rowspan="2">
+										<img src="../img/shopping_img/cart_t1.gif" width="142" height="35">
+									</td>
+									<td width="608" height="22" valign="bottom">
+										<div style="width:95px;float:left;">满250元免运费</div>
+										<div id="demo"><span id="demo1"></span></div>
+
+									</td>
+								</tr>
+								<tr>
+									<td height="1"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+					<tr>
+						<td width="222" align="center" valign="middle"><img src="../img/shopping_img/go_car.jpg" width="160" height="168"></td>
+						<td width="548">
+							<table width="520" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="520" height="35" valign="bottom"><span class="largetitle">您的购物车还是空的，赶紧行动吧！</span><span class="error">现在您可以：</span></td>
+								</tr>
+								<tr>
+									<td height="14"></td>
+								</tr>
+								<tr>
+									<td height="220" valign="top">
+										<table width="400" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td colspan="4" height="1" bgcolor="#999999"></td>
+											</tr>
+											<tr>
+												<td width="1" bgcolor="#999999"></td>
+												<td width="11" bgcolor="#EFF7FE">&nbsp;</td>
+												<td bgcolor="#EFF7FE">
+													<table width="380" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="310" height="30" class="largetitle"><img src="../img/shopping_img/cart_i1.gif" width="12" height="12"> 快速进入</td>
+														</tr>
+														<tr>
+															<td class="RemarkBlue">
+																<a href="#">DHC首页</a>&nbsp;&nbsp;
+																<a href="#">本月优惠</a>&nbsp;&nbsp;
+																<a href="#">新品上市</a>&nbsp;&nbsp;
+																<a href="#">TOP10</a>&nbsp;&nbsp;
+																<a href="#">肌肤问题</a>&nbsp;&nbsp;
+																<a href="#">我的DHC账户</a>
+															</td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+														</tr>
+														<tr>
+															<td height="30" class="largetitle">
+																<img src="../img/shopping_img/cart_i1.gif" width="12" height="12"> 热门分类
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<a href="#">美白淡斑</a>&nbsp;&nbsp;
+																<a href="#">痘痘*痘痕</a>&nbsp;&nbsp;
+																<a href="#">黑眼圈</a>&nbsp;&nbsp;
+																<a href="#">美睫</a>&nbsp;&nbsp;
+																<a href="#">卸妆</a>&nbsp;&nbsp;
+																<a href="#" class="RemarkBlue">黑头</a>
+															</td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+														</tr>
+														<tr>
+															<td height="30" class="largetitle">
+																<img src="../img/shopping_img/cart_i1.gif" width="12" height="12"> 新会员专区
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<a href="#">免费获取试用装</a>&nbsp;&nbsp;
+																<a href="#">新会员专享福利</a>&nbsp;&nbsp;
+																<a href="#">会员优惠</a>
+															</td>
+														</tr>
+														<tr>
+															<td>&nbsp;</td>
+														</tr>
+													</table>
+												</td>
+												<td width="1" bgcolor="#999999"></td>
+											</tr>
+											<tr>
+												<td colspan="4" height="1" bgcolor="#999999"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+					<tr>
+						<td height="90" colspan="2" align="center">
+							<table width="744" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td height="1" colspan="3" bgcolor="#CCCCCC"></td>
+								</tr>
+								<tr>
+									<td width="1" bgcolor="#CCCCCC"></td>
+									<td width="483">
+										<table width="742" border="0" cellpadding="0" cellspacing="0" bordercolor="#FF0000">
+											<tr>
+												<td height="17" colspan="6" background="../img/shopping_img/e_bg_02.gif">
+													<img src="../img/shopping_img/e_bg_01.gif" width="183" height="24">
+												</td>
+											</tr>
+											<tr>
+												<td colspan="6">&nbsp;</td>
+											</tr>
+											<tr class="RemarkBlue">
+												<td width="16">&nbsp;</td>
+												<td width="144" height="320" valign="top">
+													<table width="132" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="145" height="134" colspan="2" align="center" valign="middle">
+																<table width="130" height="130" border="1" cellpadding="0" cellspacing="0" bordercolor="#D4EBFD">
+																	<tr>
+																		<td align="center" valign="middle" bgcolor="#FFFFFF">
+																			<a href="#"><img src="../img/shopping_img/66_R.jpg" border="0" /></a>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" class="RemarkBlue">
+																<a href="#"><strong>橄榄滋养套装</strong></a><br/>
+																<a href="#">充分清除毛孔内污垢，并为肌肤提供充盈滋润。</a>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">￥924 ↓</td>
+														</tr>
+														<tr>
+															<td><strong style="color:#FF0000; font-size:14px">￥638</strong></td>
+															<td align="right" valign="middle">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td width="80" align="center" bgcolor="#FF0000"><strong style="color:#FFFFFF; font-size:14px; line-height: 18px;">30%OFF</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td height="40" colspan="2" align="center" valign="middle">
+																<a href="shopping_cart_1.html"><img src="../img/shopping_img/cart_b0.gif" b border="0"></a>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td width="144" height="320" valign="top">
+													<table width="132" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="145" height="134" colspan="2" align="center" valign="middle">
+																<table width="130" height="130" border="1" cellpadding="0" cellspacing="0" bordercolor="#D4EBFD">
+																	<tr>
+																		<td align="center" valign="middle" bgcolor="#FFFFFF">
+																			<a href="#"><img src="../img/shopping_img/16_R.jpg" border="0" /></a>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" class="RemarkBlue">
+																<a href="#"><strong>净白修护套装</strong></a><br/>
+																<a href="#">净白修护套装</a>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">￥1036 ↓</td>
+														</tr>
+														<tr>
+															<td><strong style="color:#FF0000; font-size:14px">￥638</strong></td>
+															<td align="right" valign="middle">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td width="80" align="center" bgcolor="#FF0000"><strong style="color:#FFFFFF; font-size:14px; line-height: 18px;">38%OFF</strong>
+
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td height="40" colspan="2" align="center" valign="middle">
+																<a href="shopping_cart_1.html"><img src="../img/shopping_img/cart_b0.gif" b border="0"></a>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td width="144" height="320" valign="top">
+													<table width="130" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="145" height="134" colspan="2" align="center" valign="middle">
+																<table width="130" height="130" border="1" cellpadding="0" cellspacing="0" bordercolor="#D4EBFD">
+																	<tr>
+																		<td align="center" valign="middle" bgcolor="#FFFFFF">
+																			<a href="#"><img src="../img/shopping_img/22308_R.jpg" border="0" /></a>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" class="RemarkBlue">
+																<a href="#"><strong>樱桃果明套装 </strong><br/> 西印度樱桃精华，塑造鲜嫩透明美肌。
+																</a>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">￥474 ↓</td>
+														</tr>
+														<tr>
+															<td><strong style="color:#FF0000; font-size:14px">￥438</strong></td>
+															<td align="right" valign="middle">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td width="80" align="center" bgcolor="#FF0000"><strong style="color:#FFFFFF; font-size:14px; line-height: 18px;">7%OFF</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td height="40" colspan="2" align="center" valign="middle">
+																<a href="shopping_cart_1.html"><img src="../img/shopping_img/cart_b0.gif" b border="0"></a>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td width="144" height="320" valign="top">
+													<table width="132" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="145" height="134" colspan="2" align="center" valign="middle">
+																<table width="130" height="130" border="1" cellpadding="0" cellspacing="0" bordercolor="#D4EBFD">
+																	<tr>
+																		<td align="center" valign="middle" bgcolor="#FFFFFF">
+																			<a href="#"><img src="../img/shopping_img/860411_R.jpg" border="0" /></a>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" class="RemarkBlue">
+																<a href="#"><strong>DHC植物滋养化妆水（L）3瓶组</strong><br/> 汇聚天然植物精粹，温和补水 宛如肌肤甘露，回归水润素颜美</a>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">￥864 ↓</td>
+														</tr>
+														<tr>
+															<td><strong style="color:#FF0000; font-size:14px">￥739</strong></td>
+															<td align="right" valign="middle">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td width="80" align="center" bgcolor="#FF0000"><strong style="color:#FFFFFF; font-size:14px; line-height: 18px;">14%OFF</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td height="40" colspan="2" align="center" valign="middle">
+																<a href="shopping_cart_1.html"><img src="../img/shopping_img/cart_b0.gif" b border="0"></a>
+															</td>
+														</tr>
+													</table>
+												</td>
+
+												<td width="146" valign="top">
+													<table width="132" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="150" height="134" colspan="2" align="center" valign="middle">
+																<table width="130" height="130" border="1" cellpadding="0" cellspacing="0" bordercolor="#D4EBFD">
+																	<tr>
+																		<td align="center" valign="middle" bgcolor="#FFFFFF">
+																			<a href="#"><img src="../img/shopping_img/867177_R.jpg" border="0" /></a>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2" class="RemarkBlue">
+																<a href="#"><strong>DHC「黄金」弹力滋润组合</strong><br/> 添加高浓度Q10成分，弹走眼纹，紧致Q弹！
+																</a>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="2">￥934 ↓</td>
+														</tr>
+														<tr>
+															<td><strong style="color:#FF0000; font-size:14px">￥668</strong></td>
+															<td align="right" valign="middle">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td width="80" align="center" bgcolor="#FF0000"><strong style="color:#FFFFFF; font-size:14px; line-height: 18px;">28%OFF</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+
+														<tr>
+															<td height="40" colspan="2" align="center" valign="middle">
+																<a href="shopping_cart_1.html"><img src="../img/shopping_img/cart_b0.gif" b border="0"></a>
+															</td>
+														</tr>
+													</table>
+													<tr>
+														<td colspan="6">&nbsp;</td>
+													</tr>
+										</table>
+										</td>
+										<td width="1" bgcolor="#CCCCCC"></td>
+										</tr>
+										<tr>
+											<td colspan="3" height="1" bgcolor="#CCCCCC"></td>
+										</tr>
+							</table>
+							</td>
+							</tr>
+							<tr>
+								<td height="10" colspan="2">&nbsp;</td>
+							</tr>
+				</table>
+				<input type="hidden" name="gcmnd" value="addCart">
+				<input type="hidden" name="gcd" value="">
+				<input type="hidden" name="gdtcd" value="001">
+				<input type="hidden" name="gcnt" value="1">
+			</form>
+			<script>
+				var ei = document.getElementById("enlarge1_images");
+				demo1.onmousemove = function(event) {
+					event = event || window.event;
+					ei.style.display = "block";
+					ei.innerHTML = '<img src="/sitetop/banner/9znmez.jpg"  />';
+					ei.style.top = document.body.scrollTop + event.clientY + 12 + "px";
+					ei.style.left = document.body.scrollLeft + event.clientX - 320 + "px";
+					//}
+					demo1.onmouseout = function() {
+						ei.innerHTML = "";
+						ei.style.display = "none";
+					}
+				}
+			</script>
+
+			<script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+			<script type="text/javascript">
+				try {
+					var pageTracker = _gat._getTracker("UA-13276207-4");
+					pageTracker._setDomainName(".dhc.net.cn");
+					pageTracker._trackPageview();
+				} catch(err) {}
+			</script>
+		</body>
+	</center>
+
+	<link rel="stylesheet" type="text/css" href="../css/foot_950.css" />
+
+	<!--以下是网页底部信息二-->
+	<div class="footBox" style="text-align:center;">
+
+		<div class="toTop" style="z-index:99999999;">
+			<a href="#top" target="_self"><img src="../img/foot_img/toTop.png" width="60" height="60"></a>
+		</div>
+
+		<div class="grayF">
+
+			<div class="bdTop">
+				<div class="w950">
+					<ul class="aboutList faH">
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 关于DHC</a>
+						</li>
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 购物指南</a>
+						</li>
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 会员优惠</a>
+						</li>
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 广告合作</a>
+						</li>
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 招聘信息</a>
+						</li>
+						<li>
+							<a href="#" target="_self" rel="nofollow">◆ 校园代理</a>
+						</li>
+						<li class="lastNo">
+							<a href="#" target="_self" rel="nofollow">◆ 网站地图</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="blackF">
+			<div class="w950 faH">
+				<ul class="footBlk bkLt left" style="text-align:left;">
+					<li>
+						<a class="logoF" href="#" target="_self"><img src="../img/foot_img/logoFoot.jpg" width="60" height="38"></a>
+					</li>
+					<li>
+						<a>
+							<b>上海蝶翠诗商业有限公司</b> 版权所有(C)2003-2012
+							<br> 上海邮政信箱126-019(浦东局) 邮编:200126
+							<br> DHC日本通信销售化妆品品牌NO.1
+							<br> (品牌排名根据日本流通产业新闻2016年1月)
+						</a>
+					</li>
+					<li>
+						<a href="#" target="_blank">企业营业执照</a>
+						<br>
+						<a>沪ICP备05035135</a>
+					</li>
+				</ul>
+				<ul class="footBlk bkRt left">
+					<li>
+						<a href="#" target="_blank"><img src="../img/foot_img/ICBC.gif" width="47" height="47"></a>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="../img/foot_img/web110.gif" width="89" height="47"></a>
+					</li>
+					<li>
+						<a href="#" target="_blank"><img src="../img/foot_img/zxw.gif" width="82" height="47"></a>
+					</li>
+					<li>
+						<a class="backBtn" href="#" target="_blank"><img src="../img/foot_img/hu.gif" /></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</html>

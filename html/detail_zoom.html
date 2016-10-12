@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DHC首页--实现轮播效果(文字效果建议用IE预览更佳)</title>
+	
+		<link rel="stylesheet" type="text/css" href="../css/smenu.css">
+		
+	    <!--轮播样式文件-->
+		<link type="text/css" rel="stylesheet" href="../css/skitter.css"/>
+
+		<!--引用头部导航栏js插件-->
+		<script src="../js/jsCommon.js"></script>
+	
+		<!--首页主体右边链接全部的样式（重要一）-->
+		<link rel="stylesheet" type="text/css" href="../css/new_top.css"/>
+		<!--首页主体右边链接鼠标经过的全部样式样式（重要二）-->
+		<link rel="stylesheet" type="text/css" href="../css/sleft.css"/>
+		<!--首页主体右边字体全部的样式（重三）-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="../css/foot_950.css"/>
+		<!--页面最低部的样式文件-->
+		
+		<script type="text/javascript" src="../js/sFlash.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
+		
+<!--以下是头部部分开始-->
+
+		<!--以下是菜单栏效果文件，需配合jsCommon文件方能实现效果-->
+		<script type="text/javascript">
+			function MM_nbGroup(event, grpName) {
+				var i, img, nbArr, args = MM_nbGroup.arguments;
+				if(event == "init" && args.length > 2) {
+					if((img = MM_findObj(args[2])) != null && !img.MM_init) {
+						img.MM_init = true;
+						img.MM_up = args[3];
+						img.MM_dn = img.src;
+						if((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+						nbArr[nbArr.length] = img;
+						for(i = 4; i < args.length - 1; i += 2)
+							if((img = MM_findObj(args[i])) != null) {
+								if(!img.MM_up) img.MM_up = img.src;
+								img.src = img.MM_dn = args[i + 1];
+								nbArr[nbArr.length] = img;
+							}
+					}
+				} else if(event == "over") {
+					document.MM_nbOver = nbArr = new Array();
+					for(i = 1; i < args.length - 1; i += 3)
+						if((img = MM_findObj(args[i])) != null) {
+							if(!img.MM_up) img.MM_up = img.src;
+							img.src = (img.MM_dn && args[i + 2]) ? args[i + 2] : ((args[i + 1]) ? args[i + 1] : img.MM_up);
+							nbArr[nbArr.length] = img;
+						}
+				} else if(event == "out") {
+					for(i = 0; i < document.MM_nbOver.length; i++) {
+						img = document.MM_nbOver[i];
+						img.src = (img.MM_dn) ? img.MM_dn : img.MM_up;
+					}
+				} else if(event == "down") {
+					nbArr = document[grpName];
+					if(nbArr)
+						for(i = 0; i < nbArr.length; i++) {
+							img = nbArr[i];
+							img.src = img.MM_up;
+							img.MM_dn = 0;
+						}
+					document[grpName] = nbArr = new Array();
+					for(i = 2; i < args.length - 1; i += 2)
+						if((img = MM_findObj(args[i])) != null) {
+							if(!img.MM_up) img.MM_up = img.src;
+							img.src = img.MM_dn = (args[i + 1]) ? args[i + 1] : img.MM_up;
+							nbArr[nbArr.length] = img;
+						}
+				}
+			}
+		</script>
+
+	</head>
+	
+
+	<body style="margin: 0; padding: 0;">
+		
+  
+
+		<div align="center">
+
+			<div style="background:#fff;">
+				<table border="0" cellpadding="0" cellspacing="0" id="top">
+					<tr>
+						<!--align="left" valign="top"表示左边和垂直边分别对齐-->
+						<td style="width: 555px; height: 100px; line-height:70%" align="left" valign="top">
+							<div style="height: 15px;">
+							</div>
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<a href="#"><img src="../img/home_img/topslogo.png" alt="" /></a>
+									</td>
+									<td style="width: 10px;">
+									</td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops02.png" alt="" /></a>
+									</td>
+									<td valign="top">
+										<a href="#"><img class="img_03" src="../img/home_img/tops03.png" alt="" /></a><br />
+										<a href="#"><img class="img_06" src="../img/home_img/tops06.png" alt="" /></a><br />
+										<a href="#"><img class="img_07" src="../img/home_img/tops07.png" alt="" /></a>
+									</td>
+									<td style="width: 20px;">
+									</td>
+									<td valign="top">
+										<!--在线客服-->
+										<a href="#"><img class="img_04" src="../img/home_img/tops04.png" alt="" /></a>
+										<a href="#"><img class="img_05" src="../img/home_img/tops98.jpg" alt="" /></a><br/>
+										<a href="#"><img class="img_99" src="../img/home_img/tops99.jpg" alt="" /></a>
+									</td>
+								</tr>
+							</table>
+
+							<div style="height: 7px;"></div>
+
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<a href="#"><img src="../img/home_img/tops08.png" alt="" /></a>
+									</td>
+									<td style="width: 15px;"></td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops09.png" alt="" /></a>
+									</td>
+									<td style="width: 15px;"></td>
+									<td>
+										<a href="#"><img src="../img/home_img/tops10.png" alt="" /></a>
+									</td>
+								</tr>
+							</table>
+						</td>
+
+						<td style="width: 395px; background: rgb(240,240,240); position: relative;">
+							<div style=" width: 381px; height: 89px;" align="left">
+								<div style="height: 15px;"></div>
+								<table border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td align="left" style="width: 187px; background: white;">
+											<table border="0" cellpadding="0" cellspacing="0">
+												<tr>
+													<td style="width: 75px; height: 20px;color: rgb(157,157,157); position: absolute; font-family: 微软雅黑;">商品合计:</td>
+													<td style="padding-left: 80px;">0</td>
+													<td>件</td>
+												</tr>
+
+												<tr>
+													<td style="width: 75px; height: 20px;color: rgb(157,157,157); position: absolute;padding-left: 24px;font-family: 微软雅黑;">合计:</td>
+										</td>
+										<td style="padding-left: 80px;">0</td>
+										<td style="color:red">元</td>
+										</tr>
+										</table>
+						</td>
+
+						<td style="width: 90px;">
+							<!--//购物车-->
+							<a href="shopping_cart.html" style="width: 90px; height: 48px; display: block;">
+								<img src="../img/home_img/tops01_03.jpg"></img>
+							</a>
+						</td>
+						<td style="width: 8px;"></td>
+						<td style="width: 90px;">
+							<!--登录或注册/-->
+							<a href="register.html" style="width: 90px; height: 48px; display: block;">
+								<img src="../img/home_img/tops01_05.jpg"></img>
+							</a>
+
+						</td>
+						</tr>
+						</table>
+
+						<div style="height: 35px; line-height: 35px; font-size: 14px; font-family: 微软雅黑;
+                                color: #483f2d;" align="center">
+<a href="#" style="font-size: 14px; font-family: 微软雅黑;color: #483f2d; text-decoration: none; position: absolute">欢迎来到DHC[点击登录]</a>
+
+						</div>
+						</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<!--头部布局结束-->
+
+			<!--以下是实现头部下划线功能-->
+			<script type="text/javascript">
+				$(".img_03").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops03.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops03.png")
+				})
+				$(".img_04").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops04.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops04.png")
+				})
+				$(".img_05").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops98.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops98.jpg")
+				})
+				$(".img_99").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops99.png")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops99.jpg")
+				})
+				$(".img_06").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops06.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops06.png")
+				})
+				$(".img_07").mouseover(function() {
+					$(this).attr("src", "../img/home_img/tops07.jpg")
+				}).mouseout(function() {
+					$(this).attr("src", "../img/home_img/tops07.png")
+				})
+			</script>
+			<!--头部布局及样式到此结束-->
+
+			<!--以下是导航栏开始-->
+
+			<div style="width: 100%; background: url(../img/home_img/bg2_1.jpg) repeat; height: 50px;background-position: center top;" align="center">
+				<table width="950" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>
+							<a href="#" target="_top" onMouseOver="MM_nbGroup('over','menu1','../img/home_img/top_2_1up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_1up.jpg" alt="" name="menu1" width="79" height="47" border="0" id="menu1" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu2','../img/home_img/top_2_2up.jpg',1)" onMouseOver="MM_nbGroup('over','menu2','../img/home_img/top_2_2up.jpg','../img/home_img/top_2_2up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_2down.jpg" alt="" name="menu2" width="174" height="47" border="0" id="menu2" onload="" /></a>
+						</td>
+
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu4','../img/home_img/top_2_4up.jpg',1)" onMouseOver="MM_nbGroup('over','menu4','../img/home_img/top_2_4up.jpg','../img/home_img/top_2_4up',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_4down.jpg" alt="" name="menu4" width="174" height="47" border="0" id="menu4" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu5','../img/home_img/top_2_5up.jpg',1)" onMouseOver="MM_nbGroup('over','menu5','../img/home_img/top_2_5up.jpg','../img/home_img/top_2_5up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_5down.jpg" alt="" name="menu5" width="174" height="47" border="0" id="menu5" onload="" /></a>
+						</td>
+						<td>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu6','../img/home_img/top_2_6up.jpg',1)" onMouseOver="MM_nbGroup('over','menu6','../img/home_img/top_2_6up.jpg','../img/home_img/top_2_6up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_6down.jpg" alt="" name="menu6" width="174" height="47" border="0" id="menu6" onload="" /></a>
+						</td>
+						<td>
+							<a href="lazyloading.html" target="_top" onClick="MM_nbGroup('down','group1','menu9','../img/home_img/top_2_9up.jpg',1)" onMouseOver="MM_nbGroup('over','menu9','../img/home_img/top_2_9up.jpg','../img/home_img/top_2_9up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_9down.jpg" alt="" name="menu9" width="175" height="47" border="0" id="menu9" onload="" /></a>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div style="width: 100%; background:  url(../img/home_img/bg2_2.jpg) repeat; height: 50px; margin-top:-3;
+            background-position: center top;" align="center">
+				<div style="width: 800px; height: 12px;">
+				</div>
+				<form name=campaignSrh method=post action="#">
+					<div style="height: 25px;" align="center">
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td style="width: 10px;">
+								</td>
+								<td style="width: 710px;" align="right">
+									<input type="text" name="searchValue" value="请输入商品名称、商品编号或关键字" maxlength="50" onBlur="searchOnBlur()" onFocus="searchOnFocus()" style="width: 700px; height: 22px; border: 1px solid #333;" />
+								</td>
+								<td style="width: 70px;">
+									<!--搜索-->
+									<a href="#" style="height: 25px; width: 70px; display: block;"><img src="../img/home_img/search.png" style="height: 25px;position: absolute; " /></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<!--以下函数是用来获取搜索框获取焦点或者是失去焦点-->
+		<script type="text/javascript">
+			function searchOnBlur() {
+				var form = document.campaignSrh;
+				if(form.searchValue.value == '') {
+					form.searchValue.value = '请输入商品名称、商品编号或关键字';
+				}
+			}
+
+			function searchOnFocus() {
+				var form = document.campaignSrh;
+				if(form.searchValue.value == '请输入商品名称、商品编号或关键字') {
+					form.searchValue.value = '';
+				}
+			}
+		</script>
+<!--以上是头部部分结束-->
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   <center>
+  	
+ 
+<!--  <div style="height: 3000px;width: 800px;background: thistle;">-->
+  <!--以下是首页主体左侧部分由此开始-->
+  
+ 
+	
+			<table width="100%" border="0" cellspacing="0" cellpadding="0"></table>
+			<table width="950" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top">
+						<table width="200" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td valign="middle">
+									<base target="_blank" />
+									<link href="../css/sleft.css" rel="stylesheet" type="text/css" />
+
+									<table border="0" cellpadding="0" cellspacing="0">
+
+										<tr>
+											<td>
+												<a href="#" target="_blank">
+													<img class="imgmouse" src="../img/home_img/open2.jpg" alt="" />
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td height="12"></td>
+										</tr>
+										<tr>
+											<td>
+												<a href="#" target="_blank">
+													<img class="imgmouse" src="../img/home_img/open1.jpg" alt="" />
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td height="12"></td>
+										</tr>
+										<tr>
+											<td align="left">
+												<table width="150" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+													<tr>
+														<td width="200" height="28">
+															<img src="../img/home_img/xx1.jpg" alt="" />
+														</td>
+													</tr>
+													<tr>
+														<td height="104" align="center" valign="middle">
+															<table width="200" border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td width="1" bgcolor="#CCCCCC"></td>
+																	<td height="145" valign="top">
+																		<table width="198" border="0" cellspacing="0" cellpadding="0">
+																			<tr>
+																				<td colspan="3" height="3"></td>
+																			</tr>
+																			<tr>
+																				<td width="12" height="120">&nbsp;</td>
+																				<td width="120">
+																					<script>
+																						var speed = 3;
+																					</script>
+																					<!--    此处引入的jsp文件，只是首页左部最新消息的内容-->
+																					<iframe id="ifr" scrolling="No" src="../news.jsp" frameborder="0" width="170" height="120"></iframe>
+																				</td>
+																				<td>&nbsp;</td>
+																			</tr>
+																			<tr>
+																				<td height="23" colspan="3" align="right">
+																					<img src="../img/home_img/left_2_3.gif" width="13" height="13" class="bt" onmousedown="speed=10" onmouseup="speed=3" onmouseover="ifrscroll=setInterval('ifr.scrollBy(0,-speed)',50)" 
+onmouseout="clearInterval(ifrscroll)" />&nbsp;
+<img src="../img/home_img/left_2_4.gif" width="13" height="13" class="bt" onmousedown="speed=10" onmouseup="speed=3"onmouseover="ifrscroll=setInterval('ifr.scrollBy(0,speed)',50)" onmouseout="clearInterval(ifrscroll)" />&nbsp;&nbsp;&nbsp;
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																	<td width="1" bgcolor="#CCCCCC"></td>
+																</tr>
+																<tr>
+																	<td height="1" colspan="3" bgcolor="#CCCCCC"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" style="">
+		<div class="nav" style="z-index: 10;">
+			<div style="border: 1px solid #ccc; background: #fff;">
+				<div>
+					<img src="../img/slider_img/hz01.jpg" alt="" />
+				</div>
+				<div style="height: 10px;">
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">卸妆</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">洁面</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">化妆水</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">美容霜·美容油</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">精华液·美容液</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">乳液·凝露</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">面膜·眼膜</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">护唇膏</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">美睫护理</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">眼霜·颈霜</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">去角质磨砂膏</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">防晒</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">护肤道具</a>
+					</div>
+				</div>
+				<div>
+					<img src="../img/slider_img/hz02.jpg" alt="" />
+				</div>
+				<div style="height: 10px;">
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">粉底液·霜</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">妆前乳·霜</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">定妆蜜粉·粉饼</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">两用粉饼</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">唇膏·唇蜜</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">眉笔粉</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">眼线液·笔·粉</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">遮瑕</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">腮红·修容粉</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">睫毛膏</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">眼影</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">彩妆道具</a>
+					</div>
+				</div>
+
+				<div>
+					<img src="../img/slider_img/hz10.jpg" alt="" />
+				</div>
+				<div style="height: 10px;">
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">植物保湿</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">淡斑·美白</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">抗老·紧致</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">黑头·毛孔</a>
+					</div>
+				</div>
+
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">眼周问题</a>
+					</div>
+				</div>
+				<div class="asd" style="width: 167px; height: 30px;">
+					<div style="width: 167px; margin-left: 15px;">
+						<strong>></strong>
+						<a href="#">控油·抗痘</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		</td>
+		</tr>
+		<!--<tr>
+			<td style="height:635px;"></td>
+		</tr>-->
+		<tr>
+			<td valign="top" style="border:solid 1px #cccccc">
+				<img src="../img/slider_img/gwzn.jpg" alt="" width="198" />
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="height:10px;border-left:1px solid #ccc;border-right:1px solid #ccc;"></td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 购物流程
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 退货换货
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 常见问题
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" align="center" style="height:30px; border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<a href="#" target="_blank">
+					<img src="../img/slider_img/border_red1.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" align="center" style="height:30px; border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<a href="#" target="_blank">
+					<img src="../img/slider_img/border_red2.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" align="center" style="height:30px; border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<a href="#" target="_blank">
+					<img src="../img/slider_img/border_red3.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" align="center" style="height:30px; border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<a href="#" target="_blank">
+					<img src="../img/slider_img/border_red4.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="height:20px;border-left:1px solid #ccc;border-right:1px solid #ccc;"></td>
+		</tr>
+
+		<tr>
+			<td valign="top">
+				<div style="background: url(../img/home_img/NO.jpg) no-repeat; width: 200px;   height:169px;background-position:center center;" align="left">
+					<a href="#" target="_blank" style="width: 200px; height: 169px; display: block; color: #000;
+                font-size: 12px; font-family: 微软雅黑;"></a>
+
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border:solid 1px #cccccc">
+				<img src="../img/slider_img/dpdl.jpg" alt="" width="198" />
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="height:10px;border-left:1px solid #ccc;border-right:1px solid #ccc;"></td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 上海
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 北京
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 广东
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="width: 167px; height: 30px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<div style="width: 167px; margin-left: 15px;">
+					<a href="#" target="_blank">
+						<strong>></strong> 更多地区
+					</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border:solid 1px #cccccc">
+				<img src="../img/slider_img/dh1.jpg" alt="" width="198" />
+			</td>
+		</tr>
+		<tr>
+			<td class="asd" style="height:10px;border-left:1px solid #ccc;border-right:1px solid #ccc;">
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img id="appimg" src="../img/slider_img/app1.jpg" alt="" width="198" />
+				<div id="appdiv" style="background:#fff; display:none;" align="center">
+					<div style="height:10px;"></div>
+					<img src="../img/slider_img/app2.jpg" alt="" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img src="../img/slider_img/xuxian1.jpg" alt="" width="198" />
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img id="wximg" src="../img/slider_img/wx1.jpg" alt="" width="198" />
+				<div id="wxdiv" style="background:#fff; display:none;" align="center">
+					<div style="height:10px;"></div>
+					<img src="../img/slider_img/wx2.jpg" alt="" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img src="../img/slider_img/xuxian1.jpg" alt="" width="198" />
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img id="wbimg" src="../img/slider_img/wb1.jpg" alt="" width="198" />
+				<div id="wbdiv" style="background:#fff; display:none;" align="center">
+					<div style="height:10px;"></div>
+					<img src="../img/slider_img/wb2.jpg" alt="" />
+					<div style="height:10px;"></div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="border:solid 1px #cccccc">
+
+				<img src="../img/slider_img/tel2.jpg" alt="" width="198" />
+
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+
+				<a href="/info/tvcm.jsp" target="_blank">
+					<img src="../img/slider_img/TVnews.jpg" alt="" />
+				</a>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+
+			</td>
+		</tr>
+		<tr>
+			<td style="border-left:1px solid #ccc;border-right:1px solid #ccc;">
+				<img src="../img/slider_img/tg1.jpg" alt="" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<table width="150" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" style="color:#483f2d;">
+
+					<tr>
+						<td align="center" valign="middle">
+							<table width="200" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="1" bgcolor="#CCCCCC"></td>
+									<td valign="top">
+										<table width="198" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td colspan="3" height="5"></td>
+											</tr>
+											<tr>
+												<td width="18" height="120">&nbsp;</td>
+												<td width="167">
+													<table width="167" border="0" cellspacing="0" cellpadding="0">
+														<tr>
+															<td width="73" height="78">
+																<a href="#" target="_blank">
+																	<img src="../img/slider_img/newss5.jpg" width="60" height="60" border="0" />
+																</a>
+															</td>
+															<td width="94">
+																<a href="#" target="_blank">
+																	加盟DHC网站推广<br /> 最高回报率8.5%
+																</a>
+															</td>
+														</tr>
+														<tr>
+															<td height="1" colspan="2" background="../img/slider_img/left_7.gif"></td>
+														</tr>
+														<tr>
+															<td width="73" height="78">
+																<a href="#" target="_blank">
+																	<img src="../img/slider_img/newss6.jpg" width="60" height="60" border="0" />
+																</a>
+															</td>
+															<td width="94">
+																<a href="#" target="_blank">
+																	DHC校园代理<br />
+																</a>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td width="13">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="12" colspan="3"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="1" bgcolor="#CCCCCC"></td>
+								</tr>
+								<tr>
+									<td height="1" colspan="3" bgcolor="#CCCCCC"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="12"></td>
+		</tr>
+		<tr>
+			<td style="border:1px solid #ccc;" align="center">
+				<a href="#" target="_blank">
+					<img class="imgmouse" src="../img/slider_img/open3.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		<tr>
+			<td height="12"></td>
+		</tr>
+		<tr>
+			<td style="border:1px solid #ccc" align="center">
+				<a href="#" target="_blank">
+					<img class="imgmouse" src="../img/slider_img/open4.jpg" alt="" />
+				</a>
+			</td>
+		</tr>
+		</table>
+
+		<script type="text/javascript" src="../js/sleft.js"></script>
+		<!--给左侧最底下图片添加效果-->
+		</td>
+		</tr>
+		</table>
+		</td>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+	
+
+					
+				
+				
+
+				<style type="text/css">
+					* {
+						margin: 0;
+						padding: 0;
+						list-style-type: none;
+					}
+					
+					a,
+					img {
+						border: none;
+					}
+					
+					.zx_slider {
+						position: relative;
+						margin: 0px auto 0 auto;
+						width: 720px;
+						height: 250px;
+						overflow: hidden;
+						border-radius: 5px;
+					}
+					
+					.zx_slider .imgbox {
+						width: 4500px;
+						height: 250px;
+						position: absolute;
+						left: 5px;
+						top: 50px;
+						bottom: 10px;
+					}
+					
+					.zx_slider .imgbox div {
+						float: left;
+						width: 720px;
+						height: 180px;
+						top: 10px;
+						bottom: 10px;
+					}
+					
+					.zx_slider .imgbox div img {
+						float: left;
+						margin-left: 17px;
+					}
+					
+					.zx_slider .png {
+						width: 1002px;
+						height: 350px;
+						left: 0px;
+						top: 0px;
+						position: absolute;
+						_background: none;
+					}
+					
+					.zx_slider .lbtn {
+						cursor: pointer;
+						width: 45px;
+						height: 55px;
+						position: absolute;
+						left: 0px;
+						bottom: -3px;
+						_background: none;
+					}
+					
+					.zx_slider .rbtn {
+						cursor: pointer;
+						width: 45px;
+						height: 55px;
+						position: absolute;
+						left: 718px;
+						bottom: -3px;
+						_background: none;
+					}
+					
+					.zx_slider .btnbox {
+						width: 720px;
+						position: absolute;
+						left: 40px;
+						margin-top: 1px;
+					}
+					
+					.zx_slider .btnbox a {
+						cursor: pointer;
+						display: block;
+						float: left;
+						width: 100px;
+						height: 30px;
+						line-height: 30px;
+						text-decoration: none;
+						font-family: 微软雅黑;
+						color: #333;
+					}
+					
+					.zx_slider .btnbox a img {
+						position: relative;
+						display: block;
+						width: 100px;
+						height: 30px;
+						float: left;
+						top: 0px;
+						left: 0px;
+					}
+					
+					.zx_slider .btnbox a .img_hover {
+						border: 3px solid #e4471f;
+						border-radius: 2px;
+					}
+					
+					.zx_slider .slider_p {
+						overflow: hidden;
+						width: 220px;
+						height: 290px;
+						position: absolute;
+						right: 15px;
+						top: 15px;
+					}
+					
+					.zx_slider .slider_p h3 {
+						margin: 20px 0 10px 0;
+						font-size: 20px;
+						text-align: center;
+						color: #faa629;
+					}
+					
+					.zx_slider .slider_p p {
+						line-height: 26px;
+						font-size: 14px;
+						color: #faa629;
+					}
+					
+					.hi_btn {
+						width: 740px;
+						height: 330px;
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						display: block;
+					}
+					
+					.divsimg {
+						width: 140px;
+						height: 140px;
+						margin-right: 4px;
+						border: 1px solid #ccc;
+					}
+					
+					.usdiv a {
+						margin-top: 10px;
+					}
+					
+					.sda1 img {
+						border: 1px solid #ccc;
+					}
+					
+					.sda12 {
+						width: 110px;
+						height: 120px;
+					}
+				</style>
+				
+				
+				
+		<!--详情页右侧和左侧的间距-->
+		  <td width="30">&nbsp;</td>
+		  
+      
+      
+      
+      
+      
+      
+      
+      
+      <!--详情页右侧部分-->
+       <td width="720" valign="top">
+	
+	     <!--detail start from here-->
+	<div align="center">
+	    <div style="margin-top:20px;">
+	    <img src="../img/detail_img/9099.jpg" width="720" height="270" border="0" alt=""/>
+		</div>
+		<div align="right">
+	       <a href="#" target="_blank">相关特辑</a>
+		
+		</div>
+		
+        <div class="div-tops" align="left" style="margin-top:10px;">
+            DHC弹力精萃润白霜（50g）
+        </div>
+        <div class="div-js1" align="left">
+            省时护肤，1瓶黄金霜实现「抗衰老+美白」护理
+        </div>
+        <div class="div-h30">
+        </div>
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width: 405px;" align="center" valign="middle">
+                   
+                   
+
+<!--此部分为实现放大镜效果-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>实现图片放大镜</title>
+		
+		
+		<style type="text/css">
+			.mainImg{ 
+				width:350px;
+				height:420px; 
+				overflow:hidden;} 
+		</style>
+		
+		<script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
+		
+		<script type="text/javascript">
+			 $(function () { 
+             $(".mainImg").gysFdj({ zoom: 2 });             
+			 });
+		</script>
+		
+		<script type="text/javascript">
+			;(function($) {
+					$.fn.gysFdj = function(options) {
+						var defaluts = {
+							cameraW: 100, //镜头宽度 
+							cameraH: 100, //镜头高度 
+							pointBjColor: "#000", //镜头的背景颜色 
+							pointOpacity: 0.3, //镜头的透明度 
+							zoomPos: 10, //放大框距离源框的位置     
+						    zoom: 2//放大倍数 0              
+						  	};
+							options = $.extend(defaluts,options);
+							var obj = $(this);
+							obj.addClass("gysFdjOrigin");
+							var objOriImg = $("img",obj);
+							var objOriImgW = objOriImg.width();
+							var objOriImgH = objOriImg.height();
+							var fdCount = $(".gysFdjOrigin").length;
+							var fdAttr = "fd"; //属性变量 
+							obj.attr(fdAttr, fdCount); //添加属性 
+							var offset = obj.offset();
+							var objLeft = offset.left; //对象left                 
+							var objTop = offset.top; //对象top 
+							var objWidth = obj.width(); //对象宽度 
+							var objHeight = obj.height(); //对象高度               
+							//镜头相对box的活动范围 
+
+							var cameraMaxLeft = objWidth + objLeft - options.cameraW; //最大左范围 
+							var cameraMaxTop = objHeight + objTop - options.cameraH; //最大下范围 
+
+							var imgStr = obj.html();
+							var html = "";
+							html += "<div style='left:" + (objLeft + objWidth + options.zoomPos) + "px; top:" + objTop + "px;display:none; position:absolute;width:" + (options.cameraW * options.zoom) + "px;height:" + (options.cameraH * options.zoom) + "px;overflow:hidden;' class='gysFdjBox' " + fdAttr + "=" + fdCount + ">" + imgStr + "</div>";
+							$("body").append(html);
+							$("img", $(".gysFdjBox[" + fdAttr + "=" + fdCount + "]")).width(objWidth * options.zoom).height(objHeight * options.zoom);
+							var objFdjcamera = null;
+							if($("#gysFdjcamera").length == 0) {
+								var pointBlock = "<div id='gysFdjcamera' style='width:" + options.cameraW + "px; height:" + options.cameraH + "px; background-color:" + options.pointBjColor + ";opacity:" + options.pointOpacity + ";filter:alpha(opacity=" + options.pointOpacity * 100 + ");cursor:crosshair;position:absolute;display:none;'></div>";
+								$("body").append(pointBlock);
+							}
+							objFdjcamera = $("#gysFdjcamera");
+							var nowLeft = 0,
+								nowTop = 0;
+							obj.on("mouseover", function(event) {
+								objFdjcamera.show().attr(fdAttr, fdCount);
+								$(".gysFdjBox[" + fdAttr + "=" + fdCount + "]").show();
+								$(document).on("mousemove", function(event) {
+									var pointX = event.clientX + $(document).scrollLeft();
+									var pointY = event.clientY + $(document).scrollTop();
+									nowLeft = pointX - options.cameraW / 2;
+									nowTop = pointY - options.cameraH / 2;
+									if(nowLeft <= objLeft) {
+										nowLeft = objLeft;
+									} else if(nowLeft >= cameraMaxLeft) {
+										nowLeft = cameraMaxLeft;
+									}
+									if(nowTop <= objTop) {
+										nowTop = objTop;
+									} else if(nowTop >= cameraMaxTop) {
+										nowTop = cameraMaxTop;
+									}
+									objFdjcamera.css({
+										left: nowLeft + "px",
+										top: nowTop + "px"
+									});
+									nowLeft = (nowLeft - objLeft) * options.zoom;
+									nowTop = (nowTop - objTop) * options.zoom;
+									$("img", $(".gysFdjBox[" + fdAttr + "=" + fdCount + "]")).css({
+										"margin-top": -nowTop + "px",
+										"margin-left": -nowLeft + "px"
+									});
+								});
+							});
+							objFdjcamera.on("mouseleave", function() {
+								$(document).off("mousemove");
+								objFdjcamera.hide();
+								$(".gysFdjBox[" + fdAttr + "=" + fdCount + "]").hide();
+							});
+						}
+					})(jQuery);
+		</script>
+	</head>
+
+	<body>
+		<div class="mainImg" style="width: 350px; height: 400px; margin-left:-40px;">
+                        <img  src="../img/detail_img/9099_L.jpg"  alt=""/>
+                    </div>
+
+	</body>
+
+</html>
+                   
+                   
+                    
+                    
+                    
+                    <div class="div-h50">
+                    </div>
+					
+					
+					
+					
+                    <div align="left" style="border: solid 2px #999; margin-top: 40px; width: 360px;">
+                        <div class="tj-div" align="center">
+                            <div class="div-zh" style="height:30px; line-height:30px; color: #2c2c2c; font-size: 14px; font-family:微软雅黑;" align="left">
+                                推荐您购买正在优惠中的商品
+                            </div>
+                            <div align="left" style="width: 90%; margin-top: 8px;">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="width:70px;height:70px;">
+										<a href="#" target="_blank">
+                                            <img src="../img/detail_img/861216_R.jpg" style="width:70px;height:70px;" alt="" />
+										</a>
+                                        </td>
+                                        <td style="width: 10px;">
+                                        </td>
+                                        <td valign="top" align="left">
+                                            <div align="left">
+                                                <a href="#" target="_blank" style="color: #2c2c2c; font-size: 12px; font-family:微软雅黑;">DHC「黄金」弹力明星组合</a>
+                                            </div>
+                                            <div align="left">
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td class="pct-num" style="color: #2c2c2c; font-size: 12px;" valign="middle">
+                                                            ￥ 846
+                                                        </td>
+														
+                                                        <td align="center" style="width: 20px; height: 30px;" valign="middle">
+                                                            <img src="../img/detail_img/left-jiantou.jpg" alt="" />
+                                                        </td>
+                                                        <td valign="middle" class="z-div-picer" style="color: #fe0000; font-weight:bold; font-size: 16px; ">
+                                                            ￥ 668
+                                                        </td>
+														
+														<td width="10">
+                                                            
+                                                        </td>
+														
+														<td  valign="middle"  align="center">
+														<div class="bfb" style="width: 57px; height: 17px;">
+                                                            21%OFF
+														</div>
+                                                        </td>
+														
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div> 
+					
+					
+                    <div class="div-h30">
+                    </div>
+                
+                </td>
+                <td align="center" valign="top" style="width: 315px;">
+                    <div align="right" class="pct-count2" style="width: 315px;line-height:20px;font-size:12px;border-bottom:1px solid #ccc;color:#666;">
+                        50g
+						
+                            <br>如需购买DHC弹力精萃润白霜 100g<br/><a href="#">请点击此处→</a>
+                        
+                    </div>
+                    <div class="div-h10">
+                    </div>
+					
+                    <div align="left">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <img src="../img/detail_img/xx4.jpg" alt="" width="49" height="15"/>
+                                </td>
+								
+                                <td style="width: 3px;">
+                                </td>
+                                <td>
+                                    <img src="../img/detail_img/xx5.jpg" alt="" width="56" height="15"/>
+                                </td>
+								
+								
+                                <td style="width: 3px;">
+                                </td>
+                                <td>
+                                    <img src="../img/detail_img/xx6.jpg" alt="" width="49" height="15"/>
+                                </td>
+								
+								
+                            </tr>
+                        </table>
+                    </div>
+					
+                    <div align="left" class="f-div-picer">
+                        商品价格 &nbsp;￥ 318 <img width="10" height="10" align="absmiddle" src="../img/detail_img/sright_r1_c3.jpg" border="0" vspace="5" hspace="5"></img>
+                    </div>
+                    <div align="left" class="z-div-name">
+                        优惠价
+                    </div>
+					
+					
+                    <div align="left" class="z-div-picer" style="font-weight:bold;font-size:30px;color:#fd2003;">
+					    
+                        &nbsp;￥268
+						
+                    </div>
+					
+					<div align="left" style="height:8px;">
+                        
+                    </div>
+					
+                    <div align="left" class="z-div-day">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="bfb" valign="middle" align="center">
+                                    15%OFF
+                                </td>
+                                <td class="data-font" valign="bottom" align="left">
+                                    10/17 09:00截止
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+					
+                    <div class="border-top">
+                    </div>
+                    <div class="pct-num" align="left">
+					 
+					    
+                        商品编号：9099
+						</div>
+					<form name="cartForm" method="post" target="_self" action="#" >
+					
+					
+					    
+						
+						
+						
+						
+						 
+						 
+						 
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+												  
+						
+						<div align="left">
+							数量：<select class="counts" name="gcnt" style="border:1px solid #000;">
+							
+								<option value="1" selected
+>1</option>
+							
+								<option value="2" >2</option>
+							
+								<option value="3" >3</option>
+							
+								<option value="4" >4</option>
+							
+								<option value="5" >5</option>
+							
+								<option value="6" >6</option>
+							
+								<option value="7" >7</option>
+							
+								<option value="8" >8</option>
+							
+								<option value="9" >9</option>
+							
+								<option value="10" >10</option>
+							
+								<option value="11" >11</option>
+							
+								<option value="12" >12</option>
+							
+								<option value="13" >13</option>
+							
+								<option value="14" >14</option>
+							
+								<option value="15" >15</option>
+							
+								<option value="16" >16</option>
+							
+								<option value="17" >17</option>
+							
+								<option value="18" >18</option>
+							
+								<option value="19" >19</option>
+							
+								<option value="20" >20</option>
+							
+							</select>
+						</div>
+						
+						<div align="center" class="div-buy" style="margin-top:20px" >
+						
+							<a href="#"><img src="../img/detail_img/dabuy.jpg" alt="" class="img-height" /></a>
+							
+							
+							
+						
+						</div>
+				    
+				
+					<input type=hidden name=gcmnd value="addCart">
+					<input type=hidden name=gcd   value="9099">
+					</form>
+					
+                    <div style="height:3px" >
+                    </div>
+                    <div align="left" class="div-looks">
+                        <a href="#" target="_blank">
+                            <img src="../img/detail_img/looks1.jpg" class="imgs-height2" alt="" /></a><br />
+                        <a href="#" target="_blank">
+                            <img src="../img/detail_img/looks2.jpg" class="imgs-height2" alt="" /></a><br />
+                        <a href="#" target="_blank">
+                            <img src="../img/detail_img/looks3.jpg" class="imgs-height2" alt="" /></a>
+                    </div>
+                    <div class="div-h30">
+                    </div>
+                 
+                </td>
+            </tr>
+        </table>
+		
+		
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		  <td height="20">&nbsp;</td>
+		</tr>
+		 <!-- 中图  -->
+		  
+		<tr>
+		   <td align="center" valign="top">&nbsp;</td>
+		</tr>							  
+									  
+        <tr>
+			<td height="20"><table width="720" border="0" cellpadding="0" cellspacing="0" class="detail">
+			  <tr>
+			    <td align="left" valign="top" style="font-size:20px;line-height: 30px;font-weight:bold;"><br/>
+			      省时护肤，1瓶黄金霜实现「抗衰老+美白」护理</td>
+			  </tr>
+			  <tr>
+			    <td height="1" background="../img/detail_img/gds_new_16.gif"></td>
+			  </tr>
+			  <tr>
+			    <td align="left" valign="top"><br/>
+			        <span class="detail">DHC弹力精萃润白霜是一款高人气的DHC辅酶精萃赋活系列ALL IN ONE黄金霜，不仅将洗脸后的5大护肤步骤（化妆水、乳液、美容霜、面膜、妆前霜）合而为一，更能同时达到美白、弹力、紧致、滋润、光泽5大护肤功效。短时间内就能完成肌肤护理，实现无暗沉的透明感与满溢的滋润感。推荐忙碌而无闲暇护肤时使用。<br/>
+<img src="../img/detail_img/22434_1.jpg "alt=5效合1 border="0"/><br/>
+
+DHC弹力精萃润白霜添加0.3%高浓度的辅酶Q10，有助于肌肤提升弹力；维生素C诱导体能淡化细纹与雀斑；雏菊精华进一步增加肌肤的透明感。洗完脸后加上一瓶黄金霜，肌肤抹去年龄痕迹，轻松享受润白紧致美肌。<br/><br/>
+黄金霜的轻盈质地，展现在涂抹时柔滑的肌肤触感。使用后马上上妆，可塑造理想的服帖妆容，特别推荐给早上没有时间护肤、想轻松出行的人群。<br/><br/>
+添加天然成分&#183;无香料&#183;无尼泊金防腐剂。<br/><br/>
+<table border="0" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #ccc">
+<tr> <td style="width: 7px; height: 28px; background: #ccc;">
+</td><td style="width: 720px; font-size: 18px; font-family: 微软雅黑; font-weight: bold; color: #333; letter-spacing: 2px;">
+&nbsp;高浓度添加丰富美肌成分，为肌肤注入Q弹能量
+</td></tr></table><br/>
+辅酶Q10是肌肤年轻紧致不可或缺的成分之一，<a href="#" target="_blank">DHC辅酶精萃赋活系列</a>10倍<sup>※1</sup>高浓度添加辅酶Q10，有效解决肌肤困扰，正是拥有高回购率的DHC经典护肤系列。<br/><br/>
+浓度就是关键！20岁左右是人体辅酶Q10含量的顶峰，随着年龄增长会不断减少，为肌肤加速补充辅酶Q10迫在眉睫。DHC为了实现将辅酶Q10运用在护肤品上，耗时长达6年时间苦心研发。最终成功实现辅酶Q10的高浓度添加。DHC辅酶精萃赋活系列呈现令人惊叹的深黄色，正是证明辅酶Q10的浓度之高！<br/><br/>
+
+DHC辅酶精萃赋活系列均添加了水溶性胎盘蛋白，具有卓越的保湿功效，还能抑制黑色素生成，防止日晒引发的细纹；甘草诱导体，能帮助维持肌肤健康；以及有助提升肌肤通透感的透明质素和胶原蛋白等丰富的美肌成分。DHC辅酶精萃赋活系列高浓度的丰富美肌成分，让肌肤从芯Q弹。<sup>※2</sup><br/><br/>
+
+<strong style="color: #fc5e9d;"> ★日本销量超过1800万！</strong>（2010年10月～2015年10月末）<br/>
+※数据来自日本株式会社DHC官方网站<br/>
+（DHC辅酶精萃赋活系列全系列的日本销量数统计）<br/><br/><span style="font-size:15px; color:#483f2d"><br/>※1 公司内比较<br/>
+※2 水溶性胎盘蛋白未添加于DHC辅酶精萃弹力洁面皂、DHC辅酶精萃赋活乳液、DHC辅酶精萃赋活面膜中，DHC弹力精萃润白霜中添加了水溶性胎盘蛋白。甘草诱导体未添加于DHC辅酶精萃赋活眼霜、DHC辅酶精萃赋活颈霜中。透明质酸、胶原蛋白未添加于DHC辅酶精萃弹力洁面皂、DHC辅酶精萃赋活手霜中。维生素E未添加于DHC辅酶精萃弹力洁面皂中。</span><br/><br/>
+<table border="0" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #ccc">
+<tr> <td style="width: 7px; height: 28px; background: #ccc;">
+</td><td style="width: 720px; font-size: 18px; font-family: 微软雅黑; font-weight: bold; color: #333; letter-spacing: 2px;">&nbsp;使用方法</td></tr></table><br/>
+取适量（樱桃粒大小）DHC弹力精萃润白霜于手心，涂抹全脸。从额头到脸颊，用手心完全包覆，充分涂匀。<br/><br/>
+<table border="0" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #ccc">
+<tr> <td style="width: 7px; height: 28px; background: #ccc;">
+</td><td style="width: 720px; font-size: 18px; font-family: 微软雅黑; font-weight: bold; color: #333; letter-spacing: 2px;">&nbsp;使用步骤</td></tr></table>
+<img src="../img/detail_img/22434_3.jpg" alt=弹力精萃润白霜 border="0"/><br/>
+<table border="0" cellpadding="0" cellspacing="0" style="border-bottom: 1px solid #333">
+<tr>
+<td style="height: 35px;" valign="middle">
+<div style="width: 7px; height: 7px; background: #333;">
+</div></td>
+<td style="width: 720px;font-weight:bold;color:000;font-size:16px">&nbsp;常见问题</td>
+</tr>
+</table>
+<img src="../img/detail_img/867176_5.jpg" alt=弹力精萃润白霜 border="0"/><br/><br/>
+<img src="../img/detail_img/shiyong.jpg "alt=使用 border="0"/><br/>
+●请注意使用时肌肤有无异常。若与肌肤不合，出现以下情形时，请停止使用。若继续使用可能会导致症状恶化，请至皮肤科就诊咨询。<br/>
+（1）使用时，出现红肿、发痒、刺激感、色斑(白斑等)、黑斑等现象。<br/>
+（2）使用后，经日晒有上述症状产生。<br/>
+●请勿使用于伤口、红肿、湿疹等皮肤异常部位。<br/>
+●使用后，肌肤如有不适，请停止使用并请教医生。<br/>
+<img src="../img/detail_img/baocun.jpg "alt=使用 border="0"/><br/>
+●请置于阴凉干燥处，避免阳光直射。<br/>
+●保存时，颜色可能有变化，非品质质量问题，请安心使用。<br/>
+●请置于幼儿无法取得之处。<br/>
+●附着于衣物时可能留下痕迹，请小心使用。<br/>
+			          <br/>
+			          <br/>
+					  
+					
+					
+					
+				  </span></td>
+			  </tr>
+			</table></td>
+		</tr>		
+
+
+		
+		</table>
+				
+		
+		<div style="height:20px">
+		</div>
+		
+
+
+		 
+		
+		<table width="720" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		  <td height="20">&nbsp;</td>
+		</tr>
+			<style type="text/css" media="screen">
+*{
+	padding:0;
+	margin:0;
+	border:0;
+}
+.rollBox{
+	width:720px; 
+	height:160px; 
+	margin-top:10px;
+	overflow:hidden;
+}
+.pre{ 
+	width:20px; 
+	height:160px; 
+	cursor:pointer; 
+	float:left; 
+	margin-right:40px;
+}
+.next{
+	width:20px; 
+	height:160px; 
+	cursor:pointer; 
+	float:left; 
+	margin-left:40px;
+}
+.rollBox .Cont{
+	width:600px;
+	height:160px;
+	overflow:hidden;
+	position:relative;
+	z-index:2; 
+	float:left;
+	margin-top:10px;
+}
+.rollBox .ScrCont{
+	width:10000000px;
+}
+.rollBox .Cont .pic{
+	width:120px; 
+	height:160px;
+	float:left; 
+	text-align:center; 
+	line-height:20px; 
+	font-size:12px;
+}
+*+html .rollBox .Cont .pic{
+	width:120px;
+	float:left;
+	text-align:center;
+}
+.rollBox .Cont .pic img{
+	display:block;
+	width:85px; 
+	height:119px; 
+	margin:0px auto;
+	border:0px;
+}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{
+	color:#333333;
+	text-decoration:underline;
+	line-height:16px; 
+	font-size:12px;
+}
+.rollBox .Cont a:hover{
+	color:#0033cc;
+	text-decoration:none; 
+	line-height:16px; 
+	font-size:12px;
+}
+.rollBox #List1,.rollBox #List2{
+	float:left;
+}
+</style>
+
+
+
+
+
+
+ <tr>
+    <td height="26" valign="bottom" background="../img/detail_img/sright_9.jpg"><table width="720" border="0" cellspacing="0" cellpadding="0">  
+      <tr>
+        <td width="11" height="20">&nbsp;</td>
+        <td width="118" class="S14">最近浏览的商品</td>
+        <td width="512"></td>
+		<td width="54"><a href="#">记录删除</a></td>
+        <td width="25"><a href="#"><img src="../img/detail_img/sright_9_1.jpg" width="10" height="9" border="0" /></a></td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <!-- 无数据  -->
+  
+	 <tr>
+		  <td height="130" align="center" valign="middle" class="S14" bgcolor="#FFFFFF">最近没有浏览过的商品</td>
+	</tr>
+	
+<!--  少于5个 -->
+
+  <!-- 大于5个 -->
+  		
+        </table>	
+
+		
+    </div>
+	
+	
+    </td>
+	</tr>
+																
+</table>
+
+<form name="moveToaddCart" action="#" method="post">
+		<input type="hidden" name="gcmnd"    value="addCart">
+		<input type="hidden" name="gcd"       value="">
+		<input type="hidden" name="returnurl" value="">
+		<input type="hidden" name="gcnt" value="1">
+</form>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+																
+</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>底部</title>
+		<style type="text/css">
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/foot_950.css" />
+		<!--页面最低部的样式文件-->
+	</head>
+
+	<body>
+
+		<!--以下是网页底部信息一-->
+<!--
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="center" bgcolor="#f6f6f6">
+
+					<div class="footBox" style="text-align:center;">
+
+						<div class="grayF">
+							<div class="w950 faH">
+								<div class="left ltB" style="text-align:left;">
+									<div class="left">
+										<h1 style="font-family:微软雅黑;
+        color:#484747;">官网订购</h1>
+										<ul class="ltList">
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">www.dhc.net.cn</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">订购、支付、配送</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">售后服务</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">常见问题</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">免费试用</a>
+											</li>
+											
+											<li>
+												<div id='live17'></div>
+											</li>
+											
+										</ul>
+									</div>
+									<div class="right">
+										<h2 style="font-family:微软雅黑;
+        color:#484747;">电话订购</h2>
+										<ul class="ltList">
+											<li>
+												<a style="font-family:微软雅黑;
+        color:#484747;">400-820-8820（手机用户免长途费）</a>
+											</li>
+											<li>
+												<a style="font-family:微软雅黑;
+        color:#484747;">800-820-8820（固话）</a>
+											</li>
+											<li>
+												<a style="font-family:微软雅黑;
+        color:#484747;">021-3318 9888（未开通800地区）</a>
+											</li>
+											<li>
+												<a style="font-family:微软雅黑;
+        color:#484747;">周一~周五 9:00~21:00</a>
+											</li>
+											<li>
+												<a style="font-family:微软雅黑;
+        color:#484747;">周六、周日 9:00~18:00 （节假日除外）</a>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+								<div class="right rtB" style="text-align:left;">
+									<div class="left">
+										<h3 style="font-family:微软雅黑;
+        color:#484747;">手机订购</h3>
+										<dl class="phoneD">
+											<dd><img src="img/foot_img/tu1.png"/></dd>
+											<dd class="pSame"><img src="img/foot_img/tu2.png"/></dd>
+										</dl>
+									</div>
+									<div class="right">
+										<h4 style="font-family:微软雅黑;
+        color:#484747;">店铺导航</h4>
+										<ul class="ltList">
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">上海</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">北京</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">广东</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">江苏</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">浙江</a>
+											</li>
+											<li>
+												<a href="#" target="_self" style="font-family:微软雅黑;
+        color:#484747;">更多地区</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</td>
+			</tr>
+		</table>-->
+
+		<!--以下是网页底部信息二-->
+		<div class="footBox" style="text-align:center;">
+
+			<div class="toTop" style="z-index:99999999;">
+				<a href="#top" target="_self"><img src="../img/foot_img/toTop.png" width="60" height="60"></a>
+			</div>
+
+			<div class="grayF">
+
+				<div class="bdTop">
+					<div class="w950">
+						<ul class="aboutList faH">
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 关于DHC</a>
+							</li>
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 购物指南</a>
+							</li>
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 会员优惠</a>
+							</li>
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 广告合作</a>
+							</li>
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 招聘信息</a>
+							</li>
+							<li>
+								<a href="#" target="_self" rel="nofollow">◆ 校园代理</a>
+							</li>
+							<li class="lastNo">
+								<a href="#" target="_self" rel="nofollow">◆ 网站地图</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="blackF">
+				<div class="w950 faH">
+					<ul class="footBlk bkLt left" style="text-align:left;">
+						<li>
+							<a class="logoF" href="#" target="_self"><img src="../img/foot_img/logoFoot.jpg" width="60" height="38"></a>
+						</li>
+						<li>
+							<a>
+								<b>上海蝶翠诗商业有限公司</b> 版权所有(C)2003-2012
+								<br> 上海邮政信箱126-019(浦东局) 邮编:200126
+								<br> DHC日本通信销售化妆品品牌NO.1
+								<br> (品牌排名根据日本流通产业新闻2016年1月)
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">企业营业执照</a>
+							<br>
+							<a>沪ICP备05035135</a>
+						</li>
+					</ul>
+					<ul class="footBlk bkRt left">
+						<li>
+							<a href="#" target="_blank"><img src="../img/foot_img/ICBC.gif" width="47" height="47"></a>
+						</li>
+						<li>
+							<a href="#" target="_blank"><img src="../img/foot_img/web110.gif" width="89" height="47"></a>
+						</li>
+						<li>
+							<a href="#" target="_blank"><img src="../img/foot_img/zxw.gif" width="82" height="47"></a>
+						</li>
+						<li>
+							<a class="backBtn" href="#" target="_blank"><img src="../img/foot_img/hu.gif" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
