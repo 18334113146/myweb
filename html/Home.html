@@ -162,8 +162,8 @@
 
 						<td style="width: 90px;">
 							<!--//购物车-->
-							<a href="shopping_cart.html" style="width: 90px; height: 48px; display: block;">
-								<img src="../img/home_img/tops01_03.jpg"></img>
+							<a href="shopping_cart.html" style="width: 90px; height: 5px; display: block;">
+								<a href="shopping_cart.html"><img src="../img/home_img/tops01_03.jpg"></img></a>
 							</a>
 						</td>
 						<td style="width: 8px;"></td>
@@ -233,20 +233,25 @@
 							<a href="#" target="_top" onMouseOver="MM_nbGroup('over','menu1','../img/home_img/top_2_1up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_1up.jpg" alt="" name="menu1" width="79" height="47" border="0" id="menu1" onload="" /></a>
 						</td>
 						<td>
-							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu2','../img/home_img/top_2_2up.jpg',1)" onMouseOver="MM_nbGroup('over','menu2','../img/home_img/top_2_2up.jpg','../img/home_img/top_2_2up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_2down.jpg" alt="" name="menu2" width="174" height="47" border="0" id="menu2" onload="" /></a>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu2','../img/home_img/top_2_2up.jpg',1)" onMouseOver="MM_nbGroup('over','menu2','../img/home_img/top_2_2up.jpg','../img/home_img/top_2_2up.jpg',1)" 
+								onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_2down.jpg" alt="" name="menu2" width="174" height="47" border="0" id="menu2" onload="" /></a>
 						</td>
 
 						<td>
-							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu4','../img/home_img/top_2_4up.jpg',1)" onMouseOver="MM_nbGroup('over','menu4','../img/home_img/top_2_4up.jpg','../img/home_img/top_2_4up',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_4down.jpg" alt="" name="menu4" width="174" height="47" border="0" id="menu4" onload="" /></a>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu4','../img/home_img/top_2_4up.jpg',1)" onMouseOver="MM_nbGroup('over','menu4','../img/home_img/top_2_4up.jpg','../img/home_img/top_2_4up',1)" 
+								onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_4down.jpg" alt="" name="menu4" width="174" height="47" border="0" id="menu4" onload="" /></a>
 						</td>
 						<td>
-							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu5','../img/home_img/top_2_5up.jpg',1)" onMouseOver="MM_nbGroup('over','menu5','../img/home_img/top_2_5up.jpg','../img/home_img/top_2_5up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_5down.jpg" alt="" name="menu5" width="174" height="47" border="0" id="menu5" onload="" /></a>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu5','../img/home_img/top_2_5up.jpg',1)" onMouseOver="MM_nbGroup('over','menu5','../img/home_img/top_2_5up.jpg','../img/home_img/top_2_5up.jpg',1)" 
+							onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_5down.jpg" alt="" name="menu5" width="174" height="47" border="0" id="menu5" onload="" /></a>
 						</td>
 						<td>
-							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu6','../img/home_img/top_2_6up.jpg',1)" onMouseOver="MM_nbGroup('over','menu6','../img/home_img/top_2_6up.jpg','../img/home_img/top_2_6up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_6down.jpg" alt="" name="menu6" width="174" height="47" border="0" id="menu6" onload="" /></a>
+							<a href="#" target="_top" onClick="MM_nbGroup('down','group1','menu6','../img/home_img/top_2_6up.jpg',1)" onMouseOver="MM_nbGroup('over','menu6','../img/home_img/top_2_6up.jpg','../img/home_img/top_2_6up.jpg',1)" 
+								onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_6down.jpg" alt="" name="menu6" width="174" height="47" border="0" id="menu6" onload="" /></a>
 						</td>
 						<td>
-							<a href="lazyloading.html" target="_top" onClick="MM_nbGroup('down','group1','menu9','../img/home_img/top_2_9up.jpg',1)" onMouseOver="MM_nbGroup('over','menu9','../img/home_img/top_2_9up.jpg','../img/home_img/top_2_9up.jpg',1)" onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_9down.jpg" alt="" name="menu9" width="175" height="47" border="0" id="menu9" onload="" /></a>
+							<a href="lazyloading.html" target="_top" onClick="MM_nbGroup('down','group1','menu9','../img/home_img/top_2_9up.jpg',1)" onMouseOver="MM_nbGroup('over','menu9','../img/home_img/top_2_9up.jpg','../img/home_img/top_2_9up.jpg',1)" 
+								onMouseOut="MM_nbGroup('out')"><img src="../img/home_img/top_2_9down.jpg" alt="" name="menu9" width="175" height="47" border="0" id="menu9" onload="" /></a>
 						</td>
 					</tr>
 				</table>
@@ -317,10 +322,10 @@
 	height: 356px;
 	display: block;
 	background-color: #FFF;
-	cursor: default;
-	opacity: 0;
+	cursor: default;  /*鼠标初始状态为默认值*/
+	opacity: 0; /*透明度设置为0*/
 	filter: alpha(opacity=0);
-	cursor: pointer;
+	cursor: pointer; /*鼠标状态设置为手型*/
 }</style>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -349,9 +354,11 @@
                 </div>  <!--图片中间五个选项卡-->
                 
                 <div class="bannerBTN east">
-                </div>
+                </div>  <!--下一页按钮-->
                 <div class="bannerBTN west">
-                </div>
+                </div>  <!--上一页按钮-->
+                
+              <!--  轮播开始前的加载状态-->
                 <div class="skitter_cover">
                     <img src="../img/lunB_img/loading.gif" width="32" height="32" /></div>
             </div>
@@ -367,7 +374,7 @@
 	var marginLEFT = parseInt($move_frm.css('margin-left'));
 	var moveDistance = $SKITTER.find('img').width();
 	var $buttons = $('.buttons');
-	var speed = 400;
+	var speed = 400;   //图片运动的速度为0.4s
 	var index = 0;
 	var interval;
 
@@ -496,25 +503,29 @@
 
 	});
 
+	//初始化
 	function Init() {
-		var timeout = 2000;
-		var inter = 8000;
-
+		var timeout = 2000; //打开页面时,需加载两秒钟才显示出图片
+		var inter = 4000; //每间隔三秒图片向左滚动一张
+		
+		//设置一个延时器
 		window.setTimeout(function() {
 			$SKITTER.find('img').fadeIn(function() {
 				$('.skitter_cover').fadeOut();
 			});
 		}, timeout);
 		
-		window.setTimeout(autoplay, timeout + inter);
+		//开启定时器
+		window.setTimeout(autoplay, timeout + inter);//自动轮播的时间=加载时间+定时器时间
 		function autoplay() {
 			interval = window.setInterval(function() {
 				$btn_east.click();
 			}, inter);
 		}
 		$SKITTER.hover(function() {
-			
-			window.clearInterval(interval);
+		
+		//最后在清除一下定时器
+		window.clearInterval(interval);
 		}, function() {
 			autoplay();
 		});
@@ -588,13 +599,19 @@
 																				<td colspan="3" height="3"></td>
 																			</tr>
 																			<tr>
-																				<td width="12" height="120">&nbsp;</td>
-																				<td width="120">
-																					<script>
+																				<td width="12" height="100">&nbsp;</td>
+																				<td width="140">
+																					<!--<script>
 																						var speed = 3;
-																					</script>
+																					</script>-->
 																					<!--    此处引入的jsp文件，只是首页左部最新消息的内容-->
-																					<iframe id="ifr" scrolling="No" src="../news.jsp" frameborder="0" width="170" height="120"></iframe>
+																					<!--iframe id="ifr" scrolling="No" src="news.jsp" frameborder="0" width="170" height="120"></iframe>-->
+																		<a href="#">>新的季节，新的价格</a>
+																		<a href="#"><br />>DHC降价通知</a>
+																		<a href="#"><br />>秋の2重礼，点击领取→</a>
+																		<a href="#"><br />>屡获日本各类时尚杂志奖</a>
+																		
+																		
 																				</td>
 																				<td>&nbsp;</td>
 																			</tr>
